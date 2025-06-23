@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #ffffff;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .toolbar {
+    display: flex;
+    align-items: center;
+    background: #f1f1f1;
+    padding: 10px;
+    gap: 10px;
+  }
+  
+  .toolbar .logo {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .toolbar input {
+    flex: 1;
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+  }
+  
+  .tabs {
+    display: flex;
+    align-items: center;
+    background: #e0e0e0;
+    padding: 5px 10px;
+  }
+  
+  .tab {
+    background: #d4d4d4;
+    padding: 8px 15px;
+    border-radius: 8px 8px 0 0;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  
+  .tab.active {
+    background: #ffffff;
+    font-weight: bold;
+  }
+  
+  iframe {
+    flex: 1;
+    width: 100%;
+    border: none;
+  }
+  
+  /* 🌙 Dark mode */
+  body.dark {
+    background: #121212;
+    color: #fff;
+  }
+  
+  body.dark .toolbar,
+  body.dark .tabs {
+    background: #1e1e1e;
+  }
+  
+  body.dark .tab {
+    background: #333;
+    color: #fff;
+  }
+  
+  body.dark .tab.active {
+    background: #222;
+  }
+  
+  body.dark input {
+    background: #333;
+    color: #fff;
+    border: 1px solid #555;
+  }
+  

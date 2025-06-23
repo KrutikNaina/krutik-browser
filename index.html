@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Krutik Browser</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="toolbar">
+    <span class="logo">Krutik Browser</span>
+    <button id="back">🔙</button>
+    <button id="reload">🔄</button>
+    <input type="text" id="url" placeholder="Search or enter URL" />
+    <button id="settings">⚙️</button>
+    <button id="darkToggle">🌙</button>
+  </div>
+
+  <div class="tabs">
+    <div class="tab active">New Tab</div>
+    <button id="newTab">➕</button>
+  </div>
+
+  <iframe id="browser-view" src="https://www.google.com"></iframe>
+
+  <script src="script.js"></script>
+</body>
+</html>
