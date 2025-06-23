@@ -41,19 +41,6 @@ settings.addEventListener('click', () => {
   alert("Settings panel coming soon!");
 });
 
-// ➕ New Tab (Basic Simulation)
-newTabBtn.addEventListener('click', () => {
-  const newTab = document.createElement('div');
-  newTab.className = 'tab';
-  newTab.textContent = 'New Tab';
-  newTab.addEventListener('click', () => {
-    setActiveTab(newTab);
-  });
-  tabsContainer.insertBefore(newTab, newTabBtn);
-  setActiveTab(newTab);
-  iframe.src = 'https://www.google.com'; // Default for new tab
-  input.value = 'https://www.google.com';
-});
 
 // 🧠 Helper: Make tab active
 function setActiveTab(tab) {
@@ -72,4 +59,51 @@ function updateTabTitle(url) {
 // 🧠 Auto-fill URL input when page loads
 iframe.addEventListener('load', () => {
   input.value = iframe.src;
+});
+
+
+newTabBtn.addEventListener('click', () => {
+  const newTab = document.createElement('div');
+  newTab.className = 'tab';
+
+  const tabTitle = document.createElement('span');
+  tabTitle.textContent = 'New Tab';
+
+  const closeBtn = document.createElement('span');
+  closeBtn.textContent = ' ❌';
+  closeBtn.style.cursor = 'pointer';
+  closeBtn.style.marginLeft = '8px';
+  closeBtn.title = 'Close Tab';
+
+  // Handle tab closing
+  closeBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Prevent triggering the tab click
+
+    const isActive = newTab.classList.contains('active');
+    newTab.remove();
+
+    if (isActive) {
+      const nextTab = document.querySelector('.tab:not(#newTab)');
+      if (nextTab) {
+        setActiveTab(nextTab);
+        iframe.src = 'https://www.google.com';
+        input.value = 'https://www.google.com';
+      } else {
+        iframe.src = 'about:blank';
+        input.value = '';
+      }
+    }
+  });
+
+  newTab.appendChild(tabTitle);
+  newTab.appendChild(closeBtn);
+
+  newTab.addEventListener('click', () => {
+    setActiveTab(newTab);
+    iframe.src = 'https://www.google.com';
+    input.value = 'https://www.google.com';
+  });
+
+  tabsContainer.insertBefore(newTab, newTabBtn);
+  setActiveTab(newTab);
 });

@@ -51,11 +51,11 @@ body {
     margin-right: 5px;
     cursor: pointer;
   }
-  
   .tab.active {
     background: #ffffff;
     font-weight: bold;
   }
+  
   
   iframe {
     flex: 1;
@@ -88,4 +88,71 @@ body {
     color: #fff;
     border: 1px solid #555;
   }
+  
+  .settings-panel {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    width: 300px;
+    background: white;
+    color: black;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 999;
+  }
+  
+  .settings-panel.hidden {
+    display: none;
+  }
+  
+  body.dark .settings-panel {
+    background: #1e1e1e;
+    color: white;
+  }
+
+
+  .bookmark-list {
+    padding: 10px;
+    background: #f9f9f9;
+    border-top: 1px solid #ddd;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .bookmark-list button {
+    background: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  body.dark .bookmark-list {
+    background: #1e1e1e;
+  }
+  body.dark .bookmark-list button {
+    background: #444;
+    color: #fff;
+  }
+
+  .tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 10px;
+    border-radius: 8px 8px 0 0;
+    background: #ccc;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .tab.active {
+    background: #fff;
+    font-weight: bold;
+  }
+  
   
